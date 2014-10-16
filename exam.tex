@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{calc}
+\usepackage[top=0.25in,bottom=0in,left=0.5in,right=0.5in]{geometry}
+\usepackage{tikz}
+
+\usepackage{emerald}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noquoting]{babel}
+
+\renewcommand{\normalsize}{\fontsize{12}{12}\selectfont}
+
+\newlength{\wholeboxwd} \setlength{\wholeboxwd}{0.99\textwidth}
+\newlength{\wholeboxht} \setlength{\wholeboxht}{0.9\textheight}
+%
+\newlength{\cuewd}   \setlength{\cuewd}{0.3\wholeboxwd}
+\newlength{\summht}  \setlength{\summht}{0.15\wholeboxht}
+\newlength{\cgridht} \setlength{\cgridht}{\wholeboxht-\summht}
+\newlength{\cgridwd} \setlength{\cgridwd}{\wholeboxwd-\cuewd}
+\newlength{\xorig}   \setlength{\xorig}{0cm}
+\newlength{\yorig}   \setlength{\yorig}{0cm}
+
+\begin{document}
+
+\ECFIntimacyDeux
+
+\pagenumbering{gobble}
+
+\begin{center}
+    \begin{tikzpicture}
+        % Grid
+        \draw[step=.5cm,gray!60,thin] (\xorig,\yorig+1em) grid (\wholeboxwd,\wholeboxht);
+        \draw[step=.25cm,gray!30,very thin] (\xorig,\yorig+1em) grid (\wholeboxwd,\wholeboxht);
+        \node[anchor=west] at (0.25,\wholeboxht+2.35em){
+            \parbox[t]{\cuewd}{Exámen}
+            };
+        \node[anchor=west] at (\wholeboxwd-\cuewd, \wholeboxht+3em) {Fecha};
+        \node[anchor=west] at (\xorig, \yorig) {
+        Roberto Cadena Vega - Ing. en Mecatrónica};
+    \end{tikzpicture}
+\end{center}
+\end{document}
